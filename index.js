@@ -1,11 +1,17 @@
-function isValidBST(root) {
-  return isValid(root, null, null);
-  function isValid(node, min, max) {
-    if (!node) return true;
-    if ((min !== null && node.val <= min) || (max !== null && node.val >= max))
-      return false;
-    return (
-      isValid(node.left, min, node.val) && isValid(node.right, node.val, max)
-    );
+function combinationSum(candidates, target) {
+  const result = [];
+  backtrack([], 0, 0);
+  return result;
+  function backtrack(combination, start, sum) {
+    if (sum === target) {
+      result.push([...combination]);
+      return;
+    }
+    if (sum > target) return;
+    for (let i = start; i < candidates.length; i++) {
+      combination.push(candidates[i]);
+      backtrack(combination, i, sum + candidates[i]);
+      combination.pop();
+    }
   }
 }

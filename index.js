@@ -1,1 +1,1 @@
-const sum = (a, b) => a + b;
+const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];

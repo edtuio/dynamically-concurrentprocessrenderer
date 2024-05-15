@@ -1,3 +1,3 @@
-function countVowels(str) {
-  return str.match(/[aeiou]/gi).length;
+function sumArray(arr) {
+  return arr.reduce((acc, curr) => acc + curr, 0);
 }
